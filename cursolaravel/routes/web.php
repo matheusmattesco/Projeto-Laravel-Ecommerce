@@ -15,4 +15,4 @@ Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.
 
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('site.carrinho');
 
-
+Route::post('/carrinho}', [CarrinhoController::class, 'adicionarCarrinho'])->name('site.addcarrinho');
