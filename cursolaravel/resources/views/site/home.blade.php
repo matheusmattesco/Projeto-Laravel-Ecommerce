@@ -2,21 +2,31 @@
 @section('title', 'Essa é a pagina HOME')
 @section('conteudo')
     
-@for ($i = 0; $i <= 10; $i++)
-    valor atual é {{ $i }} <br>
-@endfor  
+<div class="row container">
 
-@foreach ($frutas as $fruta)
-    {{ $fruta }} <br>
-@endforeach
+    @foreach ($produtos as $produto)
+        
+    
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+              <img src="{{$produto->imagem}}">
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">visibility</i></a>
+            </div>
+            <div class="card-content">
+            <span class="card-title">{{ $produto->nome}}</span>
+            <p>{{ Str::limit($produto->descricao, 20) }}</p>
+            </div>
+          </div>
+    </div> 
+    
+    @endforeach
+    <div class="row center">
+        {{ $produtos->links('custom.pagination') }}
+    </div>
+    
+</div>>
 
-@include('includes\mensagem', ['titulo' => 'Mensagem de sucesso!'])
-
-@component('components.sidebar')
-    @slot('paragrafo')
-        Texto qualquer vindo do slot
-    @endslot
-@endcomponent
 
 
 @endsection
