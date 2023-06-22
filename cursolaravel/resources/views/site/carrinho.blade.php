@@ -24,7 +24,6 @@
 
 
     @if($itens-> count() == 0)
-
     <div class="card orange">
         <div class="card-content white-text">
           <span class="card-title">Seu carrinho está vazio!</span>
@@ -33,7 +32,6 @@
         
       </div>
       <a href="{{route ('site.index') }}" class="btn waves-effect waves-light blue"> Ir para Home <i class="material-icons right">arrow_back</i></a>
-   
     @else
 
     <h5>Seu carrinho possui {{ $itens-> count() }} produtos. </h5>     
@@ -44,7 +42,6 @@
               <th>Nome</th>
               <th>Preço</th>
               <th>Quantidade</th>
-
           </tr>
         </thead>
 
